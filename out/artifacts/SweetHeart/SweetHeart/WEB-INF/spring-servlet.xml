@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    <context:annotation-config></context:annotation-config>
+    <context:component-scan base-package="com.seven.auth"></context:component-scan>
+    <context:component-scan base-package="com.seven.jump"></context:component-scan>
+    <context:component-scan base-package="com.seven.study"></context:component-scan>
+    <context:component-scan base-package="com.seven.blog"></context:component-scan>
+    <context:component-scan base-package="com.seven.controller"></context:component-scan>
+
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/view/" p:suffix=".jsp">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+    </bean>
+
+    <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="commonsMultipartResolver"
+          p:defaultEncoding="UTF-8" p:maxUploadSize="3145728"></bean>
+
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.postgresql.Driver"></property>
+        <property name="url" value="jdbc:postgresql://127.0.0.1:5433/seven"></property>
+        <property name="password" value="postgres"></property>
+        <property name="username" value="postgres"></property>
+    </bean>
+
+    <bean class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <bean class="com.seven.service.UserServ" id="userServ"></bean>
+    <bean class="com.seven.service.StudyService" id="studyService"></bean>
+    <bean class="com.seven.service.BlogService" id="blogService"></bean>
+
+    <mvc:resources mapping="static/**" location="/static/"></mvc:resources>
+    <mvc:resources mapping="static/images/**" location="/static/images/"></mvc:resources>
+    <mvc:resources mapping="static/js/**" location="/static/js/"></mvc:resources>
+    <mvc:resources mapping="static/pic/**" location="/static/pic/"></mvc:resources>
+    <mvc:resources mapping="static/css/**" location="/static/css/"></mvc:resources>
+    <mvc:resources mapping="static/vedio/**" location="/static/vedio/"></mvc:resources>
+    <mvc:resources mapping="static/style/**" location="/static/style/"></mvc:resources>
+
+</beans>
