@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>风雨扬尘</title>
+<link type="text/css" rel="stylesheet" href="../../static/css/study.css" />
+
+<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../static/js/jquery-ui-1.7.2.custom.min.js"></script>
+<link rel="Stylesheet" type="text/css" href="../../static/style/jqueryui/ui-lightness/jquery-ui-1.7.2.custom.css" />
+<script type="text/javascript" src="../../static/js/jHtmlArea-0.8.js"></script>
+<script type="text/javascript" src="../../static/js/base64.min.js"></script>
+<link rel="Stylesheet" type="text/css" href="../../static/style/jHtmlArea.css" />
+
+</head>
+<body>
+<script>
+$(document).ready(function(e) {
+	
+    $('textarea').htmlarea();
+	var data = "测试文本";
+	var ec = Base64.encode(data);
+	alert(ec);
+	
+	var dec = Base64.decode(ec);
+	alert(dec);
+	
+	$('#submit').click(function(e) {
+        var html = $('textarea').val();
+		alert(html);
+    });
+});
+</script>
+<header class="headbar">
+<a>首页</a>
+<a>学习笔记</a>
+<a>日志博客</a>
+<a>图片</a>
+<a>视频</a>
+</header>
+<div class="headContent">
+<div class="logodiv"><img class="logo" src="../../static/pic/logo.jpg" /></div>
+<div class="name">风雨扬尘</div><img class="seximg" src="../../static/pic/sex.png"/>
+<div class="intro">西北工业大学博士，热爱技术研发</div>
+<hr/>
+</div><!-- headContent -->
+<div class="newcontent">
+<div id="title"><label>标题</label><input type="text" name="title"/></div>
+<div id="data"><textarea name="data"></textarea></div>
+<div id="btn"><input type="button" name="Submit" value="提交" id="submit"/><input type="button" name="clear" value="清空"/></div>
+</div><!-- content -->
+</body>
+</html>
