@@ -31,6 +31,7 @@
         <property name="jdbcTemplate" ref="jdbcTemplate"></property>
         <property name="backup" ref="backup"></property>
     </bean>
+    <bean class="com.seven.controller.RemarkController" id="remarkController"></bean>
 
     <mvc:annotation-driven></mvc:annotation-driven>
 
@@ -45,7 +46,7 @@
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.postgresql.Driver"></property>
-        <property name="url" value="jdbc:postgresql://localhost:5433/seven"></property>
+        <property name="url" value="jdbc:postgresql://139.196.165.107:5433/seven"></property>
         <property name="password" value="ycwlb!2015"></property>
         <property name="username" value="hfit2015"></property>
     </bean>
@@ -56,6 +57,7 @@
     <bean class="com.seven.service.UserServ" id="userServ"></bean>
     <bean class="com.seven.service.StudyService" id="studyService"></bean>
     <bean class="com.seven.service.BlogService" id="blogService"></bean>
+    <bean class="com.seven.service.RemarkService" id="remarkService"></bean>
     <bean class="com.seven.model.TBackup" id="backup">
         <property name="email" value="yangxiaodong1986@163.com"></property>
         <property name="savePath" value="/usr/local/yang/backup"></property>

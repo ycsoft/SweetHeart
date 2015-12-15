@@ -63,7 +63,7 @@ a{ text-decoration:none}
 	position:absolute; width:65px; height:30px; right:2px; top:3px; display:inline-block; text-align:center;
 }
 .listitem .imgcontent{ width:70%; height:60%; position:relative; display:block; border-radius:30px; text-align:center;}
-.listitem .imgcontent img{ width:50%; height:100%; border-radius:30px}
+.listitem .imgcontent img{ width:50%; height:100%; border-radius:10px}
 .addremove a{
 	position:relative;cursor:pointer;display:inline-block;
 }
