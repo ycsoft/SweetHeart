@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -34,13 +35,14 @@ public class RemarkController {
     }
 
     @RequestMapping(value = "/addremark")
-    public String addRemark( String title,String txt){
+    public String addRemark( String title,String txt) throws UnsupportedEncodingException {
         SimpleDateFormat simpleDateFormat  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dtime = simpleDateFormat.format(new Date());
         TRemark rmk = new TRemark();
         rmk.setTitle(title);
         rmk.setTxt(txt);
         rmk.setDtime(dtime);
+        remarkService.saveRemark(rmk);
         return "remark";
     }
 }

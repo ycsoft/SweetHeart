@@ -42,15 +42,15 @@
 			var reg = new RegExp("\\+","g");
 			ehtml = ehtml.replace(reg,"%2B");
 			$('textarea').val(ehtml);
-			//var url = "/addblog?title="+title+"&txt="+ehtml;;
-			//$('#form').attr('action',url);
+			var url = "/addremark?title="+title+"&txt="+ehtml;;
+			$('#form').attr('action',url);
 		});
 
 
 	});
 </script>
 
-<form method="post" action="/addRemark" enctype="text/plain">
+<form method="post" action="" enctype="text/plain">
 	<div class="containt">
 		<div class="panel">
 			<div>

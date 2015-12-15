@@ -13,7 +13,6 @@
     <a href="/blog">日志</a>
     <a href="/remark">备忘</a>
     <a href="/album">图片</a>
-    <a href="#">视频</a>
     <c:if test="${usr=='yangchen'}">
         <a href="/backup">备份数据库</a>
     </c:if>
