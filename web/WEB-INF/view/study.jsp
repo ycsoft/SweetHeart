@@ -11,9 +11,8 @@
     <a href="/home">首页</a>
     <a href="/study">学习笔记</a>
     <a href="/blog">日志</a>
-    <a href="/blog">备忘</a>
+    <a href="/remark">备忘</a>
     <a href="/album">图片</a>
-    <a href="#">视频</a>
 </header>
 <div class="headContent2">
 <div class="logodiv"><img class="logo" src="static/pic/logo.jpg" /></div>
